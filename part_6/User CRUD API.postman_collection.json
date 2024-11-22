@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "d3b104e6-c686-4b75-bd05-54aeb01a7734",
+		"name": "User CRUD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39927091"
+	},
+	"item": [
+		{
+			"name": "Create User Endpoint Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"age\": 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api?users=user1234",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "users",
+							"value": "user1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Information",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Smith\",\n  \"age\": 31\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users/?user_id=user456",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "user456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User ",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users?user_id=user456",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "user456"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
